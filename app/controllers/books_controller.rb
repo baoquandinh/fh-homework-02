@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
     def index
-        
+        @books = Book.all.paginate(:page => params[:page], :per_page => 10)
     end
 
     def add
@@ -12,7 +12,7 @@ class BooksController < ApplicationController
     def delete
     end
 
-    def listall
+    def list_all
     end
     
     def search

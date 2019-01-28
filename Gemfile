@@ -57,3 +57,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Generate fake data
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
+# Bootstrap
+gem 'bootstrap', '~> 4.2.1'
+gem 'jquery-rails'
+
+# Pagination
+gem 'will_paginate', '>= 3.1'
+

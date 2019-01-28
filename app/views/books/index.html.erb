@@ -1,1 +1,18 @@
-<h1>Welcome to my webpage!</h1>
+<div class="container-fluid">
+    <% @books.each do |book|%>
+    <div class="row">
+        <h2>
+            <%=book.title%>
+            <%=book.author%>
+            <%=book.genre%>
+            <%=book.genre_type%>
+            <%=book.classification%>
+            <%=book.year%>
+        </h2>
+    </div>
+    <%end%>
+
+    <div class="pagination row">
+        <%= will_paginate @books %>
+    </div>
+</div>
