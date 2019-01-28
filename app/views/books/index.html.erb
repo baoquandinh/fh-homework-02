@@ -1,16 +1,41 @@
 <div class="container-fluid">
-    <% @books.each do |book|%>
+
     <div class="row">
-        <h2>
-            <%=book.title%>
-            <%=book.author%>
-            <%=book.genre%>
-            <%=book.genre_type%>
-            <%=book.classification%>
-            <%=book.year%>
-        </h2>
+        <table class="table table-striped">
+            <thead>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Type</th>
+                <th scope="col">Classification</th>
+                <th scope="col">Year</th>
+            </thead>
+            <tbody>
+                <% @books.each do |book|%>
+                <tr>
+                    <th scope="row">
+                        <%=book.title%>
+                    </th>
+                    <td>
+                        <%=book.author%>
+                    </td>
+                    <td>
+                        <%=book.genre%>
+                    </td>
+                    <td>
+                        <%=book.genre_type%>
+                    </td>
+                    <td>
+                        <%=book.classification%>
+                    </td>
+                    <td>
+                        <%=book.year%>
+                    </td>
+                </tr>
+                <%end%>
+            </tbody>
+        </table>
     </div>
-    <%end%>
 
     <div class="pagination row">
         <%= will_paginate @books %>
