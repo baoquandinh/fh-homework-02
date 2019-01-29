@@ -64,3 +64,5 @@ gem 'jquery-rails'
 # Pagination
 gem 'will_paginate', '>= 3.1'
 
+# Simple_Form
+gem 'simple_form'

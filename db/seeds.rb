@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 require 'faker'
 
 classifications = ["Local U.S. History", "Medicine", "Fine Arts", "Education", "Naval Science", "Technology", "General U.S. History", "Religion"];
