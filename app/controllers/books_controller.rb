@@ -11,7 +11,12 @@ class BooksController < ApplicationController
     def update
     end
 
-    def delete
+    def destroy
+        @book = Book.find(params[:id])
+        if @book.present?
+            @book.destroy
+        end
+        redirect_to root_path
     end
 
     def list_all
