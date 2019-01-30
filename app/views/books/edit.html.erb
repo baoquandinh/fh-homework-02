@@ -1,0 +1,18 @@
+<h1>Editing Book</h1>
+ <%= simple_form_for @book do |f|%>
+            <div class="modal-body">
+              <%= f.input :title %>
+              <%= f.input :author%>
+              <%= f.input :genre , placeholder: "Science Fiction, Speech, Comic/Graphic Novels, Action, etc..."%>
+              <%= f.input :genre_type , label: "Fiction/Nonfiction", collection: ['Fiction', 'Nonfiction']%>
+              <%= f.input :classification, collection: ["Local U.S. History", "Medicine", "Fine Arts", "Education", "Naval Science", "Technology", "General U.S. History", "Religion"] %>
+              <%= f.input :year, label: 'Year Published' ,collection: 1800..2019%>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <%= f.submit 'Update Book', class: 'btn btn-outline-success'%>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
