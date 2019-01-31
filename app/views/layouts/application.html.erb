@@ -12,6 +12,7 @@
 
 <body>
   <div class="container-fluid">
+      <!-- NavBar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="/">Book Collection</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -19,11 +20,22 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="form-inline my-2 my-lg-0">
+        <div class="navbar-nav mr-auto">
           <!-- Button Trigger Modal -->
-          <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#bookModal">Add Book</button>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#bookModal">Add
+            Book</button>
+        </div>
+        <form class="form-inline my-2 my-lg-0">
+          <!-- Search Bar -->
+          <%= form_tag("/books", method: "get") do%>
+          <!-- <%= label_tag(:query, "Search for:")%> -->
+          <%= text_field_tag(:query)%>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <!-- <%= submit_tag("Search")  %> -->
+          <% end %>
         </form>
       </div>
+
       <!-- Modal -->
       <div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="bookModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">

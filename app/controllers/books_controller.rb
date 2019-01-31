@@ -1,6 +1,10 @@
 class BooksController < ApplicationController
     def index
-        @books = Book.all.paginate(:page => params[:page], :per_page => 10)
+        if params["query"]
+            @books = Book.where("title ILIKE ?", "%#{params["query"]}%").paginate(:page => params[:page], :per_page => 10)
+        else
+            @books = Book.all.paginate(:page => params[:page], :per_page => 10)
+        end
     end
 
     def create
@@ -24,6 +28,10 @@ class BooksController < ApplicationController
             @book.destroy
         end
         redirect_to root_path
+    end
+
+    def show
+        @book = Book.find(params[:id])
     end
 
     def list_all
