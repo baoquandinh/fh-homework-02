@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
     def index
         if params["query"]
-            @books = Book.where("title ILIKE ?", "%#{params["query"]}%").paginate(:page => params[:page], :per_page => 10)
+            @books = Book.where("title ILIKE ? OR author ILIKE ? OR classification ILIKE ? OR genre ILIKE ? OR genre_type LIKE ?", "%#{params["query"]}%", "%#{params["query"]}%", "%#{params["query"]}%", "%#{params["query"]}%", "%#{params["query"]}%").paginate(:page => params[:page], :per_page => 10)
         else
             @books = Book.all.paginate(:page => params[:page], :per_page => 10)
         end
