@@ -48,7 +48,6 @@
             <%= simple_form_for Book.new do |f|%>
             <div class="modal-body">
               <%= f.input :title, placeholder: 'Title of book'%>
-              <%= f.input :author, placeholder: "Author's Name: John Doe" %>
               <%= f.input :genre , placeholder: "Science Fiction, Speech, Comic/Graphic Novels, Action, etc..."%>
               <%= f.input :genre_type , label: "Fiction/Nonfiction", collection: ['Fiction', 'Nonfiction']%>
               <%= f.input :classification, collection: ["Local U.S. History", "Medicine", "Fine Arts", "Education", "Naval Science", "Technology", "General U.S. History", "Religion"] %>
