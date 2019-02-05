@@ -9,7 +9,8 @@
               <%= f.input :year, label: 'Year Published' ,collection: 1800..2019%>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+              <%= link_to 'Cancel', root_path, class: "btn btn-secondary"%>
               <%= f.submit 'Update Book', class: 'btn btn-outline-success'%>
             </div>
             <% end %>
