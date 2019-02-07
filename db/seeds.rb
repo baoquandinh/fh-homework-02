@@ -7,16 +7,35 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+Book.destroy_all
+Author.destroy_all
+
 classifications = ["Local U.S. History", "Medicine", "Fine Arts", "Education", "Naval Science", "Technology", "General U.S. History", "Religion"];
 types = ["Fiction", "Nonfiction"];
 
 50.times do 
     Book.create(
         title: Faker::Book.title,
-        author: Faker::Book.author,
         genre: Faker::Book.genre,
         genre_type: types[Faker::Number.between(0,1)],
         classification: classifications[Faker::Number.between(0, classifications.size-1)], 
         year: Faker::Number.between(1800, 2019)
     )
+end
+
+25.times do
+    Author.create(
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        age: rand(1..100)
+    )
+end
+
+book_ids = Book.pluck(:id)
+author_ids = Author.pluck(:id)
+
+book_ids.each do |book_id|
+    rand(1..4).times do
+        Authorship.create(book_id: book_id, author_id: author_ids.sample)
+    end
 end

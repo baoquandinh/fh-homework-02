@@ -3,12 +3,9 @@
         <table class="table table-striped">
             <thead>
                 <th scope="col">Title</th>
-                <th scope="col">Author</th>
-                <th scope="col">Genre</th>
-                <th scope="col">Type</th>
-                <th scope="col">Classification</th>
+                <th scope="col">Author(s)</th>
                 <th scope="col">Year</th>
-                <th scope="col" colspan="2">Action</th>
+                <th scope="col">Action</th>
             </thead>
             <tbody>
                 <% @books.each do |book|%>
@@ -17,13 +14,7 @@
                         <%=book.title%>
                     </th>
                     <td>
-                        <%=book.genre%>
-                    </td>
-                    <td>
-                        <%=book.genre_type%>
-                    </td>
-                    <td>
-                        <%=book.classification%>
+                        <%=book.authors.map(&:first_name)%>
                     </td>
                     <td>
                         <%=book.year%>
